@@ -1,12 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Header from './Header';
+import Home from './Home';
 function App() {
   return (
-    <div className="App">
-      <h3>here I will make my major project</h3>
-      <h3>Checking if its uploaded in vercel</h3>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/login">
+            <h1>login page</h1>
+          </Route>
+          <Route path="/checkout">
+            <Header />
+            <h1>checkout..</h1>
+          </Route>
+          <Route path="/">
+            <Header />
+            <Home/>
+          
+
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
